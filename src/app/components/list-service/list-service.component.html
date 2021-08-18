@@ -1,0 +1,35 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+            <div class="bk">
+                <div class="card-body text-center">
+                    <span class="title">Lista de servicios</span>
+                    <button class="btn btn-success float-end" routerLink="/crear-servicio">Crear</button>
+                    <table *ngIf="listService.length > 0" class="table table-dark table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Banco</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let services of listService">
+                            <td>{{ services.nombre }}</td>
+                            <td>{{ services.banco }}</td>
+                            <td>{{ services.descripcion }}</td>
+                            <td>{{ services.fechaVto | date:'dd/MM/yyyy'}}</td>
+                            <td>
+                                <i [routerLink]="['/editar-servicio', services._id]" class="fas fa-edit text-primary"></i>
+                                <i (click)="deleteServices(services._id)" class="fas fa-trash-alt text-danger"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
