@@ -6,3 +6,110 @@
     cursor: pointer;
     margin-left: 15px;
 }
+
+.sidenav {
+    height: 100%;
+    width: 240px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    background: rgb(0, 0, 0);
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.9;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.raise {
+    background:#000000;
+    color:#fff;
+    border:none;
+    position:relative;
+    font-size: 25px;
+    height:60px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+
+.raise:hover {
+    background:rgb(0, 0, 0);
+    color:#1AAB8A;
+}
+
+.raise:before,.raise:after {
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+
+.raise:after {
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+.raise:hover:before,.raise:hover:after {
+    width:100%;
+    transition:800ms ease all;
+}
+
+.slide {
+    --color: #1AAB8A;
+    --hover: #1AAB8A;
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: var(--color);
+    transition: 0.40s;
+    font-size: 15px;
+}
+  
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+  border-color: var(--hover);
+  color: #fff;
+}
+
+.menuList {
+    padding-left: 200px;
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.menuList::-webkit-scrollbar {
+    display: none;
+}
+
+.menuList {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.table { 
+    color: white;
+}
+
+td:hover { 
+    transition: 0.25s;
+    color: #1AAB8A;
+}
+
+.navbar { 
+    margin-top: -30px;
+}
+

@@ -6,32 +6,36 @@
                     <span class="title">{{ title }}</span>
                     <form class="mt-3" [formGroup]="serviceForm" (ngSubmit)="createService()">
                         <div class="mb-3">
-                            <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="Nombre">
+                            <label>Nombre</label>
+                            <input type="text" formControlName="nombre" class="form-control form-control-lg">
                             <div class="text-danger" *ngIf="serviceForm.get('nombre')?.hasError('required') && serviceForm.get('nombre')?.touched">
                                 <span>Este campo es obligatorio</span>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="text" formControlName="banco" class="form-control form-control-lg" placeholder="Banco">
+                            <label>Banco</label>
+                            <input type="text" class="form-control form-control-lg" formControlName="banco">
                             <div class="text-danger" *ngIf="serviceForm.get('banco')?.hasError('required') && serviceForm.get('banco')?.touched">
                                 <span>Este campo es obligatorio</span>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="text" formControlName="descripcion" class="form-control form-control-lg" placeholder="Descripcion">
+                            <label>Descripcion</label>
+                            <input type="text" formControlName="descripcion" class="form-control form-control-lg">
                             <div class="text-danger" *ngIf="serviceForm.get('descripcion')?.hasError('required') && serviceForm.get('descripcion')?.touched">
                                 <span>Este campo es obligatorio</span>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="text" formControlName="fechaVto" class="form-control form-control-lg textbox-n" placeholder="Fecha de vencimiento" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>Fecha de vencimiento</label>
+                            <input type="date" formControlName="fechaVto" class="form-control form-control-lg textbox-n" placeholder="Fecha de vencimiento">
                             <div class="text-danger" *ngIf="serviceForm.get('fechaVto')?.hasError('required') && serviceForm.get('fechaVto')?.touched">
                                 <span>Este campo es obligatorio</span>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <button routerLink="/" class=" btn btn-secondary float-start">Volver</button>
-                            <button [disabled]="serviceForm.invalid" type="submit" class=" btn btn-success float-end">Aceptar</button>
+                            <button routerLink="/" class="btnfos btnfos-5 float-start">Volver</button>
+                            <button [disabled]="serviceForm.invalid" type="submit" class=" btnfos btnfos-5 float-end">Aceptar</button>
                         </div>
                     </form>
                 </div>

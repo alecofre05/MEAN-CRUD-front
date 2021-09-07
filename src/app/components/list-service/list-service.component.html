@@ -1,11 +1,22 @@
 <div class="container mt-3">
     <div class="row">
-        <div class="col-lg-10 offset-lg-1">
+        <div class="sidenav">
+          <button class="raise" (click)="getServices()">Inicio</button> <hr>
+          <button class="raise" (click)="getServiceByBank('galicia')">Galicia</button>
+          <button class="raise" (click)="getServiceByBank('credicoop')">Credicoop</button>
+          <button class="raise" (click)="getServiceByBank('amex')">Amex</button>
+          <button class="raise" (click)="getServiceByBank('frances')">Francés</button>
+          <button class="raise" (click)="getServiceByBank('dto. galicia')">Dto. Galicia</button>
+          <button class="raise" (click)="getServiceByBank('dto. automatico')">Dto. Automático</button>
+        </div>
+        <div class="col-lg-13 bkcMain">
             <div class="bk">
-                <div class="card-body text-center">
-                    <span class="title">Lista de servicios</span>
-                    <button class="btn btn-success float-end" routerLink="/crear-servicio">Crear</button>
-                    <table *ngIf="listService.length > 0" class="table table-dark table-striped mt-3">
+                <div class="card-body text-center menuList ">
+                    <nav class="navbar">
+                      <span class="title">Lista de servicios</span>
+                      <button class="slide float-end" routerLink="/crear-servicio">Crear</button>
+                    </nav>
+                    <table *ngIf="listService.length > 0" class="table mt-3">
                         <thead>
                           <tr>
                             <th scope="col">Nombre</th>
@@ -17,13 +28,13 @@
                         </thead>
                         <tbody>
                           <tr *ngFor="let services of listService">
-                            <td>{{ services.nombre }}</td>
-                            <td>{{ services.banco }}</td>
-                            <td>{{ services.descripcion }}</td>
-                            <td>{{ services.fechaVto | date:'dd/MM/yyyy'}}</td>
+                            <td>{{ transformName(services.nombre) }}</td>
+                            <td>{{ transformName(services.banco) }}</td>
+                            <td>{{ transformName(services.descripcion) }}</td>
+                            <td>{{ services.fechaVto | date:'dd/MM/yyyy' :'+0300'}}</td>
                             <td>
                                 <i [routerLink]="['/editar-servicio', services._id]" class="fas fa-edit text-primary"></i>
-                                <i (click)="deleteServices(services._id)" class="fas fa-trash-alt text-danger"></i>
+                                <i (click)="deleteServices(services._id)" class="fas fa-trash-alt text-danger" data-bs-toggle="modal"></i>
                             </td>
                           </tr>
                         </tbody>

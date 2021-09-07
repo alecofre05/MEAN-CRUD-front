@@ -6,3 +6,29 @@
     text-align: start;
     padding-left: 3px;
 }
+
+label {
+    color: whitesmoke;
+    float: left;
+    font-size: 20px;
+}
+
+.btnfos {
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    margin: 0 auto 2em;
+    position: relative;
+    width: 100%;
+    background-color: #0a6b54;
+    text-shadow: none;
+    border: 0 solid;
+}
+
+.btnfos-5:hover {
+    background-color: #044636;
+    transition: 0.3s;
+}

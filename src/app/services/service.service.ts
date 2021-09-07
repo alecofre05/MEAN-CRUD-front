@@ -30,4 +30,8 @@ export class ServiceService {
   updateServices(id: string, service: Service): Observable<any> { 
     return this.http.put(this.url + id, service);
   }
+
+  getServiceByBank(bankName: string): Observable<any> {
+    return this.http.get(this.url + 'banco/' + bankName);
+  }
 }

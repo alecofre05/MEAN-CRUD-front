@@ -43,7 +43,7 @@ export class CreateServiceComponent implements OnInit {
     }
     if(this.id !== null) {
       this._serviceServices.updateServices(this.id, servicio).subscribe(data => {
-        this.toastr.info('El servicio se actualizó correctamente', 'Servicio actualizado', { timeOut : 3000 , closeButton : true});
+        this.toastr.info('El servicio se actualizó correctamente', 'Servicio actualizado', { timeOut : 3000 , closeButton : true , positionClass : 'toast-bottom-right', progressBar: true});
         this.router.navigate(['/']);
       },error => {
         console.log(error);
@@ -54,7 +54,7 @@ export class CreateServiceComponent implements OnInit {
 
       console.log(servicio);
       this._serviceServices.saveServices(servicio).subscribe(data =>{
-      this.toastr.success('El servicio se registró correctamente', 'Servicio regsitrado', { timeOut : 3000 , closeButton : true});
+      this.toastr.success('El servicio se registró correctamente', 'Servicio regsitrado', { timeOut : 3000 , closeButton : true, positionClass : 'toast-bottom-right', progressBar: true});
       this.router.navigate(['/']);
     }, error => {
       console.log(error);
